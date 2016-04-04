@@ -10,11 +10,7 @@ describe "Static pages" do
     end
 
     it "should have the right title" do
-<<<<<<< HEAD
       visit '/static_pages/home'
-=======
-      visit 'static_pages/home'
->>>>>>> 844b13abbb79b1533673415893063767d088c72e
       expect(page).to have_title('Home')
     end
 
@@ -28,11 +24,7 @@ describe "Static pages" do
     end
 
     it "should have the right title" do
-<<<<<<< HEAD
       visit '/static_pages/help'
-=======
-      visit 'static_pages/help'
->>>>>>> 844b13abbb79b1533673415893063767d088c72e
       expect(page).to have_title('Help')
     end
 
@@ -46,17 +38,12 @@ describe "Static pages" do
     end
 
     it "should have the right title" do
-<<<<<<< HEAD
       visit '/static_pages/about'
-=======
-      visit 'static_pages/about'
->>>>>>> 844b13abbb79b1533673415893063767d088c72e
       expect(page).to have_title('About')
     end
 
   end
 
-<<<<<<< HEAD
   describe "Contact page" do
 
     it "should have the content 'Contact'" do
@@ -71,6 +58,4 @@ describe "Static pages" do
 
   end
 
-=======
->>>>>>> 844b13abbb79b1533673415893063767d088c72e
 end
