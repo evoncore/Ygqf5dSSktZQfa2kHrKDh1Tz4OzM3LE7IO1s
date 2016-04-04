@@ -10,7 +10,7 @@ describe "Static pages" do
     end
 
     it "should have the right title" do
-      visit 'static_pages/home'
+      visit '/static_pages/home'
       expect(page).to have_title('Home')
     end
 
@@ -24,7 +24,7 @@ describe "Static pages" do
     end
 
     it "should have the right title" do
-      visit 'static_pages/help'
+      visit '/static_pages/help'
       expect(page).to have_title('Help')
     end
 
@@ -38,7 +38,7 @@ describe "Static pages" do
     end
 
     it "should have the right title" do
-      visit 'static_pages/about'
+      visit '/static_pages/about'
       expect(page).to have_title('About')
     end
 
@@ -52,7 +52,7 @@ describe "Static pages" do
     end
 
     it "should have the right title" do
-      visit 'static_pages/contact'
+      visit '/static_pages/contact'
       expect(page).to have_title('Contact')
     end
 
