@@ -21,11 +21,12 @@ group :development, :test do
   gem 'byebug'
   gem 'sqlite3'
   gem 'rspec-rails'
+  gem 'capybara', '2.2.0'
 end
 
 group :test do
   gem 'selenium-webdriver'
-  gem 'capybara'
+  gem 'capybara', '2.2.0'
 end
 
 group :development do
