@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+;(function() {
+
+  'use strict';
+
+  var doc = document,
+      mainTable;
+
+  mainTable = doc.querySelector('.main-table');
+
+  mainTable.style.marginLeft = '-' + mainTable.offsetWidth / 2 + 'px';
+
+})();
