@@ -1,0 +1,120 @@
+// Variables
+
+$af: sans-serif, Arial
+
+/*=== RESET ===*/
+
+*
+  padding: 0
+  margin: 0
+  outline: 0
+
+a
+  text-decoration: none
+  color: orange
+
+ul
+  list-style: none
+
+/*=== MAIN SETTINGS ===*/
+
+body
+  min-width: 960px
+  font-family: Roboto
+
+::selection
+  background-color: #222
+  color: #fff
+
+::-moz-selection
+  background-color: #222
+  color: #fff
+
+.container
+  width: 960px
+  margin: 0 auto
+
+.clearfix:before,
+.clearfix:after
+  display: block
+  content: ''
+  clear: both
+
+.btn
+  display: inline-block
+  padding: 15px 30px
+  border: 1px solid #eee
+  color: #222
+  transition: .2s
+  &:hover
+    background-color: rgba(255,255,255,.4)
+
+/*=== HEADER ===*/
+
+header
+  background-color: #222
+  a
+    color: #fff
+  #logo
+    float: left
+    margin: 10px 0
+    font-family: Nunito
+    opacity: .5
+    transition: .2s
+    &:hover
+      opacity: 1
+  nav
+    float: right
+    &:hover
+      cursor: default
+    li
+      display: inline-block
+      padding: 12px 0
+      font: 14px Nunito, $af
+    a
+      padding: 5px 5px
+      margin: 10px 15px
+      opacity: .5
+      transition: .2s
+      &:hover
+        opacity: 1
+
+/*=== SLIDER ===*/
+
+.slider
+  color: #222
+  text-align: center
+  width: 100%
+  padding: 250px 0
+  background: url(slider-bg0.jpg) center no-repeat, #ddd
+  background-size: cover
+  h1
+    margin: 20px 0
+
+/*=== FOOTER ===*/
+
+footer
+  background-color: #222
+  a
+    color: #fff
+  #copyright
+    float: left
+    margin: 10px 0
+    font-family: Nunito
+    color: #fff
+    opacity: .5
+  nav
+    float: right
+    &:hover
+      cursor: default
+    li
+      display: inline-block
+      padding: 12px 0
+      font: 14px Nunito, $af
+    a
+      padding: 5px 5px
+      margin: 10px 15px
+      opacity: .5
+      transition: .2s
+      &:hover
+        opacity: 1
