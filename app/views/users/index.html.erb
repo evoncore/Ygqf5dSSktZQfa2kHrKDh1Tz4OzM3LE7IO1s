@@ -10,8 +10,10 @@
         <td><%= f.name %></td>
         <td><%= f.email %></td>
         <td><%= gravatar_for f, size: 20 %></td>
-        <% if current_user.admin? && !current_user?(@user) %>
-        <td><%= link_to "delete", "users/#{f.id}#destroy", method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <% if current_user.admin? && !current_user?(@user) && !f.admin %>
+        <td>
+          <%= link_to "delete", "users/#{f.id}#destroy", method: :delete, data: { confirm: "Are you sure?" } %>
+        </td>
         <% end %>
       </tr>
     <% end %>

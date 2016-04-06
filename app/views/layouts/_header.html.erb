@@ -1,17 +1,16 @@
 <header>
   <div class="container clearfix">
-    <%= link_to "Capybara Studio", root_path, id: 'logo' %>
     <nav>
       <ul>
-        <li><%= link_to "Home",    root_path %></li>
-        <li><%= link_to "Help",    help_path %></li>
+        <li><%= link_to "Home",    root_path, class: 'current_page' %></li>
+        <li><%= link_to "Help",    help_path, class: 'current_page' %></li>
         <% if signed_in? %>
-          <li><%= link_to "Users",      users_path %></li>
-          <li><%= link_to "Profile",    current_user %></li>
-          <li><%= link_to "Settings",   edit_user_path(current_user) %></li>
+          <li><%= link_to "Users",      users_path, class: 'current_page' %></li>
+          <li><%= link_to "Profile",    current_user, class: 'current_page' %></li>
+          <li><%= link_to "Settings",   edit_user_path(current_user), class: 'current_page' %></li>
           <li><%= link_to "Sign out",   sign_out_path, method: "delete" %></li>
         <% else %>
-          <li><%= link_to "Sign In", sign_in_path %></li>
+          <li><%= link_to "Sign In", sign_in_path, class: 'current_page' %></li>
         <% end %>
       </ul>
     </nav>
