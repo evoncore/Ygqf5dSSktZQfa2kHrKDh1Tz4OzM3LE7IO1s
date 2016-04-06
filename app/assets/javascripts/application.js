@@ -24,6 +24,8 @@
 
   mainTable = doc.querySelector('.main-table');
 
-  mainTable.style.marginLeft = '-' + mainTable.offsetWidth / 2 + 'px';
+  if (mainTable) {
+    mainTable.style.marginLeft = '-' + mainTable.offsetWidth / 2 + 'px';
+  }
 
 })();
