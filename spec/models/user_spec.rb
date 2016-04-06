@@ -72,6 +72,16 @@ describe User do
     it { should_not be_valid }
   end
 
+  describe "email address with mixed case" do
+    let(:mixed_case_email) { "Foo@ExAMPle.CoM" }
+
+    it "should be saved as all lower-case" do
+      @user.email = mixed_case_email
+      @user.save
+      expect(@user.reload.email).to eq mixed_case_email.downcase
+    end
+  end
+
   describe "when password is not present" do
     before do
       @user = User.new(name: "Example User", email: "user@example.com",
@@ -103,6 +113,26 @@ describe User do
 
     it { should_not eq user_for_invalid_password }
       specify { expect(user_for_invalid_password).to be_false }
+    end
+  end
+
+  describe "User pages" do
+    
+    subject { page }
+
+    describe "profile page" do
+      let(:user) { FactoryGirl.create(:user) }
+      before { visit user_path(user) }
+
+      it { should have_content(user.name) }
+      it { should have_title(user.name) }
+    end
+
+    describe "signup page" do
+      before { visit signup_path }
+
+      it { should have_content('Sign up') }
+      it { should have_title(full_title('Sign up')) }
     end
   end
 

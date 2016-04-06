@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   match '/contact', to: 'static_pages#contact', via: 'get'
 
-  match '/singup', to: 'user#new',              via: 'get' 
+  match '/singup', to: 'users#new',              via: 'get'
+
+  resources :users
 
 end
