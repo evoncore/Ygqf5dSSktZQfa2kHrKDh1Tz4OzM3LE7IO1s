@@ -3,6 +3,8 @@
 <div class="main-table">
   <%= form_for(:session, url: sessions_path) do |f| %>
     <h1>Sign In</h1>
+
+    <p class="error error_auth"><%= @error_auth %></p>
   
     <%= f.label :email %>
     <%= f.text_field :email %>
