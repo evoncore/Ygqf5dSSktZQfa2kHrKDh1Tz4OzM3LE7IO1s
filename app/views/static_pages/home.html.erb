@@ -3,6 +3,10 @@
 <div class="container">
   <div class="main-table">
     <h1>Capybara Studio</h1>
-    <%= link_to "Sing up now!", singup_path , class: 'btn' %>
+    <% if signed_in? %>
+      <h2>Welcome to Capybara Studio!</h2>
+    <% else %>
+      <%= link_to "Sign up now!", sign_up_path , class: 'btn' %>
+    <% end %>
   </div>
 </div>
