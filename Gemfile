@@ -19,6 +19,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bcrypt-ruby'
 
+gem 'faker'
+
+gem 'will_paginate'
+
 group :development, :test do
   gem 'byebug'
   gem 'sqlite3'

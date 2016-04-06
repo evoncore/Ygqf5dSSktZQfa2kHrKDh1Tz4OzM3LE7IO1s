@@ -64,6 +64,33 @@ body
   margin-top: -20px
   font-size: 14px
 
+.users_table
+  margin: 0 auto
+  margin-top: 25px
+  td
+    padding: 5px 15px
+    border: 1px solid #444
+    text-align: left
+
+td.current_user
+  border: 1px solid #00D06F
+
+.pagination
+  margin: 25px 0
+  a
+    padding: 5px 10px
+    border: 1px solid #444
+    transition: .2s
+    &:hover
+      background-color: rgba(255,255,255, 1)
+  em.current
+    font-style: normal
+    padding: 5px 10px
+    border: 1px solid #00D06F
+  span.next_page.disabled
+    padding: 5px 10px
+
+
 /*=== ALERTS ===*/
 
 .alert-success
@@ -77,12 +104,12 @@ header
   top: 0
   width: 100%
   background-color: #222
-  border-bottom: 1px solid #333
   a
     color: #fff
   #logo
     float: left
-    margin: 10px 0
+    margin: 20px 0
+    line-height: 20px
     font-family: Nunito
     opacity: .5
     transition: .2s
@@ -94,15 +121,17 @@ header
       cursor: default
     li
       display: inline-block
-      padding: 12px 0
-      font: 14px Nunito, $af
     a
-      padding: 5px 5px
-      margin: 10px 15px
+      display: inline-block
+      font: 14px Nunito, $af
+      padding: 20px
       opacity: .5
-      transition: .2s
+      transition: .1s
+      border-bottom: 2px solid #222
       &:hover
         opacity: 1
+        background-color: rgba(255,255,255,.1)
+        border-bottom: 2px solid #00D06F
 
 /*=== SLIDER ===*/
 
@@ -135,6 +164,7 @@ header
       background-color: rgba(255,255,255, 0)
       &:focus
         background-color: rgba(255,255,255,.4)
+        border: 1px solid #00D06F
     input.btn
       padding: 10px 20px
       margin: 50px auto

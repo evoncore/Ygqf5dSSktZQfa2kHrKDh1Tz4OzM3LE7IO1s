@@ -1,0 +1,19 @@
+<%= provide(:title, 'All Users') %>
+
+<div class="container">
+  <h1>All Users</h1>
+  <%= will_paginate %>
+  <table class="users_table">
+    <% @users.each do |f| %>
+      <tr>
+        <td><%= f.id %></td>
+        <td><%= f.name %></td>
+        <td><%= f.email %></td>
+        <td><%= gravatar_for f, size: 20 %></td>
+        <% if current_user.admin? && !current_user?(@user) %>
+        <td><%= link_to "delete", "users/#{f.id}#destroy", method: :delete, data: { confirm: "Are you sure?" } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>
