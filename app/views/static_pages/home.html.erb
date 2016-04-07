@@ -2,11 +2,17 @@
 
 <div class="container">
   <div class="main-table">
-    <h1>Capybara Studio</h1>
-    <% if signed_in? %>
-      <h2>Welcome to Capybara Studio!</h2>
+  <% if signed_in? %>
+    <section>
+      <%= render 'shared/user_info' %>
+    </section>
+    <section>
+      <%= render 'shared/micropost_form' %>
+    </section>
+    <%= render 'shared/feed' %>
     <% else %>
-      <%= link_to "Sign up now!", sign_up_path , class: 'btn' %>
-    <% end %>
+    <h1>Capybara Studio</h1>
+    <%= link_to "Sign up now!", sign_up_path , class: 'btn' %>
+  <% end %>
   </div>
 </div>

@@ -7,13 +7,15 @@
     <% @users.each do |f| %>
       <tr>
         <td><%= f.id %></td>
-        <td><%= f.name %></td>
-        <td><%= f.email %></td>
+        <td><%= link_to f.name, users_path + "/#{f.id}" %></td>
         <td><%= gravatar_for f, size: 20 %></td>
         <% if current_user.admin? && !current_user?(@user) && !f.admin %>
         <td>
           <%= link_to "delete", "users/#{f.id}#destroy", method: :delete, data: { confirm: "Are you sure?" } %>
         </td>
+        <% end %>
+        <% if f.admin %>
+        <td>admin</td>
         <% end %>
       </tr>
     <% end %>

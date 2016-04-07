@@ -23,4 +23,8 @@ Rails.application.routes.draw do
   match '/sign_in', to: 'sessions#new',         via: 'get'
   match '/sign_out', to: 'sessions#destroy',    via: 'delete'
 
+  # Microposts
+
+  resources :microposts, only: [:create, :destroy]
+
 end
