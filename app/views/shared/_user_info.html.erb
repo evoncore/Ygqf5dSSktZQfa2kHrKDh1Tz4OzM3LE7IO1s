@@ -1,4 +1,4 @@
-<%= link_to gravatar_for(@user), @user, class: 'avatar' %>
+<p class="avatar"><%= gravatar_for(@user) %></p>
 
 <h1><%= @user.name %></h1>
 <%= render 'follow_form' %>

@@ -2,8 +2,8 @@
 <div class="stats">
   <a href="<%= following_user_path(@user) %>" class="stat friends">
     <i class="fa fa-users"></i>
-    <strong id="followers">
-      <%= @user.followers.count %>
+    <strong id="followed">
+      <%= @user.followed_users.count %>
     </strong>
   </a>
   <a href="<%= microposts_user_path(@user) %>" class="stat comments">

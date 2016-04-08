@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
-  WillPaginate.per_page = 13
+  WillPaginate.per_page = 12
 
   def index
     @users = User.paginate(page: params[:page])
@@ -48,6 +48,7 @@ class UsersController < ApplicationController
   end
 
   def following
+    WillPaginate.per_page = 20
     @title = "Following"
     @user = User.find(params[:id])
     @users = @user.followed_users.paginate(page: params[:page])
