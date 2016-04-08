@@ -2,20 +2,28 @@
 
 <div class="container">
   <h1>All Users</h1>
-  <%= will_paginate %>
+  <%= will_paginate @users, previous_label: "Prev", next_label: "Next" %>
   <table class="users_table">
+    <tr>
+      <td>ID</td>
+      <td>NAME</td>
+      <td>AV</td>
+      <td>STATUS</td>
+    </tr>
     <% @users.each do |f| %>
       <tr>
         <td><%= f.id %></td>
         <td><%= link_to f.name, users_path + "/#{f.id}" %></td>
         <td><%= gravatar_for f, size: 20 %></td>
+        <% if f.admin %>
+        <td>Admin</td>
+        <% else %>
+        <td>User</td>
+        <% end %>
         <% if current_user.admin? && !current_user?(@user) && !f.admin %>
         <td>
           <%= link_to "delete", "users/#{f.id}#destroy", method: :delete, data: { confirm: "Are you sure?" } %>
         </td>
-        <% end %>
-        <% if f.admin %>
-        <td>admin</td>
         <% end %>
       </tr>
     <% end %>

@@ -16,8 +16,10 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
+  def app_version
+  end
+
   def admin
-    
   end
 
 end

@@ -1,21 +1,17 @@
 <% provide(:title, 'Home') %>
 
-<div class="container">
-  <div class="main-table">
-  <% if signed_in? %>
-    <section>
-      <%= render 'shared/user_info' %>
-    </section>
-    <section>
-      <%= render 'shared/stats' %>
-    </section>
-    <section>
-      <%= render 'shared/micropost_form' %>
-    </section>
-    <%= render 'shared/feed' %>
-    <% else %>
-    <h1>Capybara Studio</h1>
-    <%= link_to "Sign up now!", sign_up_path , class: 'btn' %>
-  <% end %>
+<% if signed_in? %>
+  <div class="tile profile">
+    <%= render 'shared/current_user_info' %>
+    <%= render 'shared/stats' %>
   </div>
-</div>
+  <div class="tile send-post">
+    <%= render 'shared/micropost_form' %>
+  </div>
+  <div class="tile other-user-posts">
+    <%= render 'shared/feed' %>
+  </div>
+  <% else %>
+  <h1>Capybara Studio</h1>
+  <%= link_to "Sign up now!", sign_up_path , class: 'btn' %>
+<% end %>

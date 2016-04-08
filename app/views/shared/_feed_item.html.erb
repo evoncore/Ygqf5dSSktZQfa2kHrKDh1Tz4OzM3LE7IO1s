@@ -1,14 +1,14 @@
 <li id="<%= feed_item.id %>">
-  <span class="user">
+  <b class="user">
     <%= link_to feed_item.user.name, feed_item.user %>
-  </span>
+  </b>
   <span class="content"><%= feed_item.content %></span>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+    Posted <b><%= time_ago_in_words(feed_item.created_at) %></b> ago.
   </span>
   <span>
     <% if current_user?(feed_item.user) %>
-      <%= link_to "delete", feed_item, method: :delete, data: { confirm: "You sure?" }, title: feed_item.content %>
+      <%= link_to "", feed_item, method: :delete, title: feed_item.content,  class: 'fa fa-times' %>
     <% end %>
   </span>
 </li>

@@ -4,23 +4,25 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  match '/help',     to: 'static_pages#help',    via: 'get'
+  match '/help',        to: 'static_pages#help',          via: 'get'
 
-  match '/about',    to: 'static_pages#about',   via: 'get'
+  match '/about',       to: 'static_pages#about',         via: 'get'
 
-  match '/contact',  to: 'static_pages#contact', via: 'get'
+  match '/contact',     to: 'static_pages#contact',       via: 'get'
 
-  match '/admin',    to: 'static_pages#admin',   via: 'get'
+  match '/admin',       to: 'static_pages#admin',         via: 'get'
+
+  match '/app_version', to: 'static_pages#app_version',   via: 'get'
 
   # Users
 
   resources :users do
     member do
-      get :following, :followers
+      get :following, :followers, :microposts
     end
   end
 
-  match '/sign_up',  to: 'users#new',            via: 'get'
+  match '/sign_up',     to: 'users#new',                  via: 'get'
 
   resources :relationships, only: [:create, :destroy]
 
@@ -28,8 +30,8 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  match '/sign_in',  to: 'sessions#new',         via: 'get'
-  match '/sign_out', to: 'sessions#destroy',     via: 'delete'
+  match '/sign_in',    to: 'sessions#new',               via: 'get'
+  match '/sign_out',   to: 'sessions#destroy',           via: 'delete'
 
   # Microposts
 

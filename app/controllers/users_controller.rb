@@ -61,6 +61,9 @@ class UsersController < ApplicationController
     render 'show_follow'
   end
 
+  def microposts
+  end
+
   private
 
     def user_params
