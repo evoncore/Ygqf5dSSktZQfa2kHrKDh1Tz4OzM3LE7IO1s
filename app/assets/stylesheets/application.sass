@@ -564,3 +564,38 @@ footer
   background-color: #444
   padding: 20px
   box-shadow: inset 0 0 10px rgba(0,0,0,.5)
+
+/*=== APP VERSION ===*/
+
+#app_version
+  width: 500px
+  margin: 0 auto
+  text-align: left
+  h1
+    b
+      color: #298A5D
+  h2
+    margin: 40px 0
+    margin-bottom: 10px
+  h3
+    @extend h2
+  .patch_add
+    color: #298A5D
+    li
+      padding: 10px 0
+      &:before
+        display: inline-block
+        font-family: FontAwesome
+        content: '\f067'
+        float: left
+        margin-right: 20px
+  .patch_fixed
+    color: #D9494D
+    li
+      padding: 10px 0
+      &:before
+        display: inline-block
+        font-family: FontAwesome
+        content: '\f0ad'
+        float: left
+        margin-right: 20px
