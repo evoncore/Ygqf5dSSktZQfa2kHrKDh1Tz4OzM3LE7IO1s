@@ -184,7 +184,15 @@ td.current_user
   border: 3px solid #ccc
   background-color: #ddd
   margin-top: -10px
-
+  img
+    display: block
+    margin: 0 auto
+    height: 100px
+    width: 100px
+    border-radius: 50%
+    border: 3px solid #ccc
+    background-color: #ddd
+    margin-top: -10px
 
 .small-avatar
   img
@@ -390,8 +398,10 @@ input[type=file]#user_avatar
     background-color: #222
 
 .upload-avatar
+  display: inline-block
+  width: 181px
   position: relative
-  top: -35px
+  top: -40px
   padding: 5px 0
   z-index: -1
   font-size: 12px
@@ -474,18 +484,18 @@ header
     h1
       padding-bottom: 20px
     input
-      border: 0
+      border: 1px solid #bbb
       box-shadow: 0 0 10px rgba(0,0,0,.1)
       display: block
       margin: 10px auto
       padding: 5px
       background-color: rgba(255,255,255, .1)
-      border: 1px solid #bbb
       &:focus
         background-color: rgba(255,255,255,.4)
     input.btn
       padding: 10px 20px
       margin: 50px auto
+      margin-top: 25px
       color: #333
     #error_explanation
       margin-top: -20px
