@@ -28,7 +28,6 @@
     mainTable.style.marginLeft = '-' + mainTable.offsetWidth / 2 + 'px';
   }
 
-<<<<<<< HEAD
   // Message Validation | If message == blank > hide submit
 
   var postText,
@@ -86,6 +85,4 @@
 
   // End Message Validation //
 
-=======
->>>>>>> fd807bd2050b2487d2564e3900c5f67e7f02f16c
 })();
