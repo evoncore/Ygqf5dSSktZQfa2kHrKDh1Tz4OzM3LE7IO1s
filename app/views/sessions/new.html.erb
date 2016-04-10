@@ -1,0 +1,20 @@
+<%= provide(:title, 'Sing In') %>
+
+<div class="main-table">
+  <%= form_for(:session, url: sessions_path) do |f| %>
+    <h1>Sign In</h1>
+
+    <p class="error error_auth"><%= @error_auth %></p>
+  
+    <%= f.label :login %>
+    <%= f.text_field :login %>
+  
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  
+    <%= f.submit "Sing In", class: "btn" %>
+
+    <span>New user? <%= link_to "Sing up now!", sign_up_path %></span>
+
+  <% end %>
+</div>

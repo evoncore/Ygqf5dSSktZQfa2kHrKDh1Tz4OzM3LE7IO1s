@@ -1,0 +1,37 @@
+<%= provide(:title, 'All Users') %>
+
+<div class="container">
+  <h1>All Users</h1>
+  <table class="users_table">
+    <tr>
+      <td>ID</td>
+      <td>LOGIN</td>
+      <td>NAME</td>
+      <td>AV</td>
+      <td>STATUS</td>
+    </tr>
+    <% @users.each do |f| %>
+      <tr>
+        <td><%= f.id %></td>
+        <td><%= link_to f.login, users_path + "/#{f.id}" %></td>
+        <td><%= f.name %></td>
+        <% if current_user.avatar? %>
+          <td><%= image_tag current_user.avatar.url(:thumb), class: "users_image" %></td>
+        <% else %>
+          <td><%= image_tag "default_user.jpg", class: "users_image" %></td>
+        <% end %>
+        <% if f.admin %>
+        <td>Admin</td>
+        <% else %>
+        <td>User</td>
+        <% end %>
+        <% if current_user.admin? && !current_user?(@user) && !f.admin %>
+        <td>
+          <%= link_to "delete", "users/#{f.id}#destroy", method: :delete, data: { confirm: "Are you sure?" } %>
+        </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+  <%= will_paginate @users, previous_label: "Prev", next_label: "Next" %>
+</div>
