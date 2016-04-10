@@ -5,7 +5,11 @@
   <% if @users.any? %>
     <div class="user_avatars">
       <% @users.each do |user| %>
+<<<<<<< HEAD
         <%= link_to image_tag(user.avatar.url(:thumb)), user, class: "small-avatar" %>
+=======
+        <%= link_to gravatar_for(user), user, class: "small-avatar" %>
+>>>>>>> fd807bd2050b2487d2564e3900c5f67e7f02f16c
       <% end %>
     </div>
   <% end %>

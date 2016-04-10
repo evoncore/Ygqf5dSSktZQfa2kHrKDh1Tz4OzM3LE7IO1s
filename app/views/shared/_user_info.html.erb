@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% if @user.avatar? %>
   <%= image_tag @user.avatar.url(:thumb), class: "avatar" %>
 <% else %>
@@ -6,4 +7,9 @@
 
 <h1 class="user_login"><%= @user.login %></h1>
 <h2 class="user_name"><%= @user.name %></h2>
+=======
+<p class="avatar"><%= gravatar_for(@user) %></p>
+
+<h1><%= @user.name %></h1>
+>>>>>>> fd807bd2050b2487d2564e3900c5f67e7f02f16c
 <%= render 'follow_form' %>

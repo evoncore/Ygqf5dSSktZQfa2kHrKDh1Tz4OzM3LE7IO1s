@@ -24,7 +24,11 @@ class UsersController < ApplicationController
   def update
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
+<<<<<<< HEAD
       render 'edit'
+=======
+      redirect_to @user
+>>>>>>> fd807bd2050b2487d2564e3900c5f67e7f02f16c
     else
       render 'edit'
     end
@@ -35,7 +39,10 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash[:success] = "Welcome to the Capybara Studio"
+<<<<<<< HEAD
       UserMailer.welcome_email(@user).deliver_now
+=======
+>>>>>>> fd807bd2050b2487d2564e3900c5f67e7f02f16c
       redirect_to @user
     else
       render 'new'
@@ -69,7 +76,11 @@ class UsersController < ApplicationController
   private
 
     def user_params
+<<<<<<< HEAD
       params.require(:user).permit(:login, :name, :email, :password, :password_confirmation, :avatar)
+=======
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+>>>>>>> fd807bd2050b2487d2564e3900c5f67e7f02f16c
     end
 
     def correct_user

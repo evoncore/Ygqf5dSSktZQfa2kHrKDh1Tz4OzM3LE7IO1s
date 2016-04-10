@@ -35,7 +35,10 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
+<<<<<<< HEAD
   Paperclip.options[:command_path] = "/usr/local/bin/"
+=======
+>>>>>>> fd807bd2050b2487d2564e3900c5f67e7f02f16c
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

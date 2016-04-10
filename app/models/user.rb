@@ -6,23 +6,33 @@ class User < ActiveRecord::Base
   has_many :reverse_relationships, foreign_key: "followed_id", class_name: "Relationship", dependent: :destroy
   has_many :followers, through: :reverse_relationships, dependent: :destroy
 
+<<<<<<< HEAD
   # User Avatar
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "60x60#" }
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
 
+=======
+>>>>>>> fd807bd2050b2487d2564e3900c5f67e7f02f16c
   # default_scope -> { order('user_id') }
 
   before_save { self.email = email.downcase }
   before_create :create_remember_token
 
+<<<<<<< HEAD
   validates :login, presence: true, length: { maximum: 16 }
+=======
+>>>>>>> fd807bd2050b2487d2564e3900c5f67e7f02f16c
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
 
   has_secure_password
+<<<<<<< HEAD
   validates :password, length: { minimum: 6 }, allow_nil: true
+=======
+  validates :password, length: { minimum: 6 }
+>>>>>>> fd807bd2050b2487d2564e3900c5f67e7f02f16c
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64

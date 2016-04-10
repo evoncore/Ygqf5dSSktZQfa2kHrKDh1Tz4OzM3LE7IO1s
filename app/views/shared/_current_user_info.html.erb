@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <% if current_user.avatar? %>
   <%= image_tag current_user.avatar.url(:thumb), class: "avatar" %>
 <% else %>
@@ -6,3 +7,9 @@
 
 <h1 class="user_login"><%= current_user.login %></h1>
 <h2 class="user_name"><%= current_user.name %></h2>
+=======
+<%= link_to gravatar_for(current_user), current_user, class: 'avatar' %>
+
+<h1><%= current_user.name %></h1>
+<span><%= link_to "View my profile", current_user %></span>
+>>>>>>> fd807bd2050b2487d2564e3900c5f67e7f02f16c
