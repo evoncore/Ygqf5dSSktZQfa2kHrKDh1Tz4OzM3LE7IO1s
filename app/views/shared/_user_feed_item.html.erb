@@ -1,0 +1,16 @@
+<% if user_feed_item.user.id == current_user.id %>
+
+  <li id="<%= user_feed_item.id %>">
+    <b class="user">
+      <%= link_to user_feed_item.user.name, user_feed_item.user %>
+    </b>
+    <span class="content"><%= user_feed_item.content %></span>
+    <span class="timestamp">
+      Posted <b><%= time_ago_in_words(user_feed_item.created_at) %></b> ago.
+    </span>
+    <% if current_user?(@user) %>
+    <%= link_to "", user_feed_item, method: :delete, class: 'fa fa-times' %>
+    <% end %>
+  </li>
+  
+<% end %>
